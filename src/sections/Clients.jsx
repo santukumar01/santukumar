@@ -4,7 +4,6 @@ const Clients = () => {
   return (
     <section className="c-space my-20">
       <h3 className="head-text">Hear from My Clients</h3>
-      <p className="text-white">These are totally imagenry</p>
       <div className="client-container">
         {clientReviews.map((item) => (
           <div key={`review-${item.id}`} className="client-review">

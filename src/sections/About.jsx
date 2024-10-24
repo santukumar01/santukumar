@@ -23,6 +23,7 @@ const About = () => {
             <img
               src="assets/grid1.png"
               alt="grid-1"
+              style={{ borderRadius: "20px" }} // Correct syntax
               className="w-full sm:h-[276px] h-fit object-contain"
             />
 
@@ -40,16 +41,24 @@ const About = () => {
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img
-              src="assets/grid2.png"
+              src="assets/Grid-2.png"
               alt="grid-2"
-              className="w-full sm:h-[276px] h-fit object-contain"
+              style={{ borderRadius: "20px" }}
+              className="rounded-[20px] w-full sm:h-[276px] h-fit object-contain"
             />
 
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                I specialize in a variety of languages, frameworks, and tools
-                that allow me to build robust and scalable applications
+                I specialize in{" "}
+                <span className="font-bold">
+                  {" "}
+                  {/* Use Tailwind's font-bold class */}
+                  C/C++, Data Structures and Algorithms, JavaScript, and the
+                  MERN stack
+                </span>
+                , along with other frameworks and tools that allow me to build
+                robust and scalable applications.
               </p>
             </div>
           </div>
@@ -86,7 +95,14 @@ const About = () => {
                 I&apos;m based in Bihar, India and open to remote work
                 worldwide.
               </p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              {/* <Button name="Contact Me" isBeam containerClass="w-full mt-10" /> */}
+              <a href="#contact" className="w-fit">
+                <Button
+                  name="Contact Me"
+                  isBeam
+                  containerClass="w-full mt-10"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -106,6 +122,33 @@ const About = () => {
                 Programming isn&apos;t just my profession—it&apos;s my passion.
                 I enjoy exploring new technologies, and enhancing my skills.
               </p>
+              <div className=" grid-subtext ">
+                GeeksforGeek :
+                <a
+                  href="https://www.geeksforgeeks.org/user/santuku67/"
+                  className="text-blue-600"
+                >
+                  Profile Link
+                </a>
+              </div>
+              <div className="grid-subtext">
+                LeetCode :
+                <a
+                  href="https://leetcode.com/u/santuku67/"
+                  className="text-blue-600"
+                >
+                  Profile Link
+                </a>
+              </div>
+              <div className="grid-subtext">
+                Resume :
+                <a
+                  href="https://drive.google.com/file/d/1qUOukvK3GcXhwh7zKVCaEfAo90nJKbBs/view?usp=drive_link"
+                  className="text-blue-600"
+                >
+                  Link
+                </a>
+              </div>
             </div>
           </div>
         </div>

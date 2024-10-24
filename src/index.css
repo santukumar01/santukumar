@@ -13,6 +13,10 @@ body {
   font-family: "General Sans", sans-serif;
 }
 
+.conrner-radius {
+  border-radius: 20px !important;
+}
+
 @layer utilities {
   .c-space {
     @apply sm:px-10 px-5;
@@ -146,7 +150,7 @@ body {
   }
 
   /*  footer */
-  .social-icon {
+  .social-icon a {
     @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;
   }
 }

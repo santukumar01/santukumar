@@ -123,7 +123,7 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 required
-                rows={5}
+                rows={3}
                 className="field-input"
                 placeholder="Share your thoughts or inquiries..."
               />
