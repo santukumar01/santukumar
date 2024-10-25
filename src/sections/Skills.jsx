@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import "boxicons";
-
 const Skills = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
