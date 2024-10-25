@@ -7,7 +7,8 @@ import Clients from "./sections/Clients.jsx";
 import Contact from "./sections/Contact.jsx";
 import Footer from "./sections/Footer.jsx";
 import WorkExperience from "./sections/Experiance.jsx";
-import Skills from "./sections/skills.jsx";
+import Skills from "./sections/Skills.jsx";
+
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto">
