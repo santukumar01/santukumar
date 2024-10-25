@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "boxicons";
 
 const Skills = () => {
@@ -21,10 +22,12 @@ const Skills = () => {
     { name: "css3", color: "#3716da" },
     { name: "javascript", color: "#ffe301" },
     { name: "tailwind-css", color: "#391dc1" },
+    { name: "github", color: "#615e33" },
   ];
 
   return (
     <section className="c-space my-20" id="skills">
+      {/* <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>; */}
       <div className="col-span-1 xl:row-span-3">
         <div className="grid-container">
           <p className="grid-headtext">My Skills</p>
@@ -62,10 +65,12 @@ const Skills = () => {
                     color={icon.color}
                     size="50px"
                   ></box-icon>
+                  {/* <i class='bx bxs-heart bx-border-circle'></i> */}
                 </div>
               </div>
             ))}
           </div>
+          <div></div>
         </div>
       </div>
     </section>
