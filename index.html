@@ -11,9 +11,36 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <title>Santu Kumar</title>
+    <style>
+      #animated-title {
+        font-size: 2em;
+        animation: fadeIn 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <h1 id="animated-title">Santu Kumar</h1>
+    <script>
+      const titles = ["Santu Kumar", "Welcome to my page", "Enjoy your stay!"];
+      let index = 0;
+
+      function changeTitle() {
+        document.title = titles[index];
+        index = (index + 1) % titles.length;
+      }
+
+      setInterval(changeTitle, 2000); // Change title every 2 seconds
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
