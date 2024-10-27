@@ -1,26 +1,24 @@
 import React, { useState } from "react";
+import "./Skills.css";
 
 const Skills = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const handleMouseEnter = (index) => {
-    setHoveredIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
-
   const icons = [
-    { name: "c-plus-plus", color: "#d3f21d" },
-    { name: "react", color: "#4e0fda" },
-    { name: "nodejs", color: "#dd0b0e" },
-    { name: "mongodb", color: "#b50e10" },
-    { name: "html5", color: "#dacc16" },
-    { name: "css3", color: "#3716da" },
-    { name: "javascript", color: "#ffe301" },
-    { name: "tailwind-css", color: "#391dc1" },
-    { name: "github", color: "#615e33" },
+    { name: "c-plus-plus", showntxt: "C++", color: "#d3f21d" },
+    {
+      name: "data",
+      showntxt: "Data Structures and Algorithms",
+      color: "#0a17d7",
+    },
+    { name: "nodejs", showntxt: "NodeJS", color: "#dd0b0e" },
+    { name: "React", showntxt: "ReactJs", color: "#4e0fda" },
+    { name: "MongoDB", showntxt: "MongoDB", color: "#b50e10" },
+    { name: "HTML5", showntxt: "HTML", color: "#dacc16" },
+    { name: "CSS3", showntxt: "CSS", color: "#3716da" },
+    { name: "JavaScript", showntxt: "JavaScript", color: "#ffe301" },
+    { name: "Tailwind CSS", showntxt: "Tailwind CSS", color: "#391dc1" },
+    { name: "GitHub", showntxt: "Github", color: "#615e33" },
   ];
 
   return (
@@ -33,36 +31,35 @@ const Skills = () => {
             {icons.map((icon, index) => (
               <div
                 key={index}
-                className="p-6 text-white cursor-pointer rounded-lg"
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-                style={{
-                  transition: "transform 0.5s",
-                  transform:
-                    hoveredIndex === index
-                      ? "rotateY(180deg)"
-                      : "rotateY(0deg)",
-                  perspective: "1000px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "100px",
-                  height: "100px",
-                }}
+                className="skill-icon"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div
-                  style={{
-                    fontSize: "40px",
-                    backfaceVisibility: "hidden",
-                  }}
-                >
-                  <box-icon
-                    name={icon.name}
-                    type="logo"
-                    color={icon.color}
-                    size="50px"
-                  ></box-icon>
+                {/* Icon Container with Flip Effect */}
+                <div className="icon-container">
+                  {/* Front Side */}
+                  <div
+                    className="icon-face icon-front"
+                    style={{ color: icon.color }}
+                  >
+                    <box-icon
+                      name={icon.name.toLowerCase().replace(" ", "-")}
+                      type="logo"
+                      color={icon.color}
+                      size="50px"
+                    ></box-icon>
+                  </div>
+
+                  {/* Back Side with Reversed Text */}
+                  <div className="icon-face icon-back">
+                    <span>{[...icon.name].reverse().join("")}</span>
+                  </div>
                 </div>
+
+                {/* Tooltip */}
+                {hoveredIndex === index && (
+                  <span className="tooltip">{icon.showntxt}</span>
+                )}
               </div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./Skills.css";
 import { navLinks } from "../constants/index.js";
 
 const NavItems = ({ onClick = () => {} }) => (
